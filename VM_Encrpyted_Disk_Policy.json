@@ -1,0 +1,29 @@
+{
+  "mode": "Indexed",
+  "policyRule": {
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.Compute/disks"
+        },
+        {
+          "anyOf": [
+            {
+              "field": "Microsoft.Compute/disks/encryptionSettingsCollection.enabled",
+              "exists": "false"
+            },
+            {
+              "field": "Microsoft.Compute/disks/encryptionSettingsCollection.enabled",
+              "equals": "false"
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "effect": "audit"
+    }
+  },
+  "parameters": {}
+}
