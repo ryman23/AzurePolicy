@@ -1,0 +1,171 @@
+{
+  "mode": "Indexed",
+  "policyRule": {
+    "if": {
+      "anyOf": [
+        {
+          "field": "[concat('tags[', parameters('tagName1'), ']')]",
+          "notEquals": "[parameters('tagValue1')]"
+        },
+        {
+          "field": "[concat('tags[', parameters('tagName2'), ']')]",
+          "notEquals": "[parameters('tagValue2')]"
+        },
+        {
+          "field": "[concat('tags[', parameters('tagName3'), ']')]",
+          "notEquals": "[parameters('tagValue3')]"
+        },
+        {
+          "field": "[concat('tags[', parameters('tagName4'), ']')]",
+          "notEquals": "[parameters('tagValue4')]"
+        },
+        {
+          "field": "[concat('tags[', parameters('tagName5'), ']')]",
+          "notEquals": "[parameters('tagValue5')]"
+        },
+        {
+          "field": "[concat('tags[', parameters('tagName6'), ']')]",
+          "notEquals": "[parameters('tagValue6')]"
+        }
+      ]
+    },
+    "then": {
+      "effect": "modify",
+      "details": {
+        "roleDefinitionIds": [
+          "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+        ],
+        "operations": [
+          {
+            "operation": "addOrReplace",
+            "field": "[concat('tags[', parameters('tagName1'), ']')]",
+            "value": "[parameters('tagValue1')]"
+          },
+          {
+            "operation": "addOrReplace",
+            "field": "[concat('tags[', parameters('tagName2'), ']')]",
+            "value": "[parameters('tagValue2')]"
+          },
+          {
+            "operation": "addOrReplace",
+            "field": "[concat('tags[', parameters('tagName3'), ']')]",
+            "value": "[parameters('tagValue3')]"
+          },
+          {
+            "operation": "addOrReplace",
+            "field": "[concat('tags[', parameters('tagName4'), ']')]",
+            "value": "[parameters('tagValue4')]"
+          },
+          {
+            "operation": "addOrReplace",
+            "field": "[concat('tags[', parameters('tagName5'), ']')]",
+            "value": "[parameters('tagValue5')]"
+          },
+          {
+            "operation": "addOrReplace",
+            "field": "[concat('tags[', parameters('tagName6'), ']')]",
+            "value": "[parameters('tagValue6')]"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "tagName1": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Name 1",
+        "description": "The Name of the Tag 1"
+      },
+      "defaultValue": ""
+    },
+    "tagValue1": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Value 1",
+        "description": "The value of the Tag 1"
+      },
+      "defaultValue": ""
+    },
+    "tagName2": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Name 2",
+        "description": "The name of the Tag 2"
+      },
+      "defaultValue": ""
+    },
+    "tagValue2": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Value 2",
+        "description": "The value of the Tag 2"
+      },
+      "defaultValue": ""
+    },
+    "tagName3": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Name 3",
+        "description": "The name of the Tag 3"
+      },
+      "defaultValue": ""
+    },
+    "tagValue3": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Value 3",
+        "description": "The value of the Tag 3"
+      },
+      "defaultValue": ""
+    },
+    "tagName4": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Name 4",
+        "description": "The name of the Tag 4"
+      },
+      "defaultValue": ""
+    },
+    "tagValue4": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Value 4",
+        "description": "The value of the Tag 4"
+      },
+      "defaultValue": ""
+    },
+    "tagName5": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Name 5",
+        "description": "The name of the Tag 5"
+      },
+      "defaultValue": ""
+    },
+    "tagValue5": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Value 5",
+        "description": "The value of the Tag 5"
+      },
+      "defaultValue": ""
+    },
+    "tagName6": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Name 6",
+        "description": "The name of the Tag 6"
+      },
+      "defaultValue": ""
+    },
+    "tagValue6": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Value 6",
+        "description": "The value of the Tag 6"
+      },
+      "defaultValue": ""
+    }
+  }
+}

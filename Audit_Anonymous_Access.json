@@ -1,0 +1,29 @@
+{
+    "properties": {
+      "displayName": "Storage Account Audit Anonymous Access",
+      "policyType": "Custom",
+      "mode": "All",
+      "description": "This policy audits storage account blobs and containers for anonymous access.",
+      "metadata": {},
+      "parameters": {},
+      "policyRule": {
+        "if": {
+          "allOf": [
+            {
+              "field": "type",
+              "equals": "Microsoft.Storage/storageAccounts/blobServices/containers"
+            },
+            {
+              "not": {
+                "field": "Microsoft.Storage/storageAccounts/blobServices/containers/publicAccess",
+                "equals": "None"
+              }
+            }
+          ]
+        },
+        "then": {
+          "effect": "deny"
+      }
+    }
+  }
+}
